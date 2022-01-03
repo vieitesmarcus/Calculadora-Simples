@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Calculadora</title>
+</head>
+
+<body>
+    <div class="container">
+        <section class="tela">
+            <input type="text" id="resultado" placeholder="0">
+        </section>
+        <section class="calculadora">
+            <div class="linha">
+                <a href="#" class="botao item-1" onclick="calcular('acao','c')">C</a>
+                <a href="#" class="botao" onclick="calcular('acao','/')">/</a>
+                <a href="#" class="botao" onclick="calcular('acao','*')">X</a>
+            </div>
+            <div class="linha">
+                <a href="#" class="botao" onclick="calcular('valor',7)">7</a>
+                <a href="#" class="botao" onclick="calcular('valor',8)">8</a>
+                <a href="#" class="botao" onclick="calcular('valor',9)">9</a>
+                <a href="#" class="botao" onclick="calcular('acao','-')">-</a>
+            </div>
+            <div class="linha">
+                <a href="#" class="botao" onclick="calcular('valor',4)">4</a>
+                <a href="#" class="botao" onclick="calcular('valor',5)">5</a>
+                <a href="#" class="botao" onclick="calcular('valor',6)">6</a>
+                <a href="#" class="botao" onclick="calcular('acao','+')">+</a>
+            </div>
+            <div class="linha alinha-esquerda">
+                <a href="#" class="botao" onclick="calcular('valor',1)">1</a>
+                <a href="#" class="botao" onclick="calcular('valor',2)">2</a>
+                <a href="#" class="botao" onclick="calcular('valor',3)">3</a>
+            </div>
+            <div class="linha">
+                <a href="#" class="botao" style="width: 140px;" onclick="calcular('valor',0)">0</a>
+                <a href="#" class="botao" onclick="calcular('acao','.')">.</a>
+                <a href="#" class="botao item-final" onclick="calcular('acao','=')">=</a>
+            </div>
+        </section>
+    </div>
+    <script>
+        function calcular(tipo, valor) {
+            let valor_campo = [];
+            if (tipo === "valor") {
+                document.getElementById("resultado").value += valor;
+            }
+            if (tipo === "acao") {
+                if (valor === 'c') {
+                    document.getElementById("resultado").value = "";
+                }
+                if (valor === '+' || valor === '*' || valor === '-' || valor === '/' || valor === '.') {
+                    document.getElementById("resultado").value += valor;
+                }
+
+                if (valor === '=') {
+                    let resultado = eval(document.getElementById("resultado").value);
+                    document.getElementById('resultado').value = resultado;
+                }
+
+            }
+        }
+    </script>
+</body>
+
+</html>
