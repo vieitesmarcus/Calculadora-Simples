@@ -2,34 +2,51 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 24px;
 }
 body{
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background-color: #3b4664;
 }
 .container{
     max-width: 300px;
-    height: 400px;
+    height: 455px;
     display: flex;
     flex-direction: column;
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.719);
+    background-color: #3b4664;
 }
+/* visor da calculadora */
+.tela{
+    background-color:#181f32;
+    padding: 0px 10px ;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
 input{
     width: 97%;    
-    height: 55px;
+    height: 70px;
     margin: 5px;
-    
+    text-align: right;
+    background-color: #181f32;
+    color: white;
+    font-weight: 900;
+    border: none;
 }
+/* teclado da calculadora */
 .calculadora{
     display: flex;
     flex-direction: column;
     height: 100%;
     align-items: center;
     justify-content: space-around;
-    
+    background-color: #181f32;
+    border-radius: 10px;
+    padding: 15px;
 }
 .linha{
     width: 100%;
@@ -37,29 +54,36 @@ input{
     justify-content: space-around;
 }
 .botao{
-    margin: 5px;
-    width: 65px; 
+    width: 55px; 
+    height: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 5px;
-    height: 50px;
-    border: 1px solid black;
-    background-color: rgba(133, 131, 131, 0.61);
+    background-color:#eae3db;
+    box-shadow: 0px 2px 1px gray;
+    font-weight: 700;
 }
 .botao:hover{
     background-color: rgba(201, 199, 199, 0.61);
 }
 .botao.item-1{
-    width: 140px;
+    width: 123px;
+    background-color: #647299;
+    color: white;
+    box-shadow: 0 2px 1px #647299;
 }
 .botao.item-final{
-    height: 117px;
-    margin-top: -63px;
+    height: 92px;
+    margin-top: -58px;
+    background: #d13f30;
+    box-shadow: 0 2px 1px #d13f30;
+    color: white;
     
 }
 .alinha-esquerda{
-    justify-content: flex-start;
+    width: 75%;
+    align-self: flex-start;
 }
 a{
     text-decoration: none;
