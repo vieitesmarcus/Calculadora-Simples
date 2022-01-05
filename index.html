@@ -39,18 +39,24 @@
                 <a href="#" class="botao" onclick="calcular('valor',3)">3</a>
             </div>
             <div class="linha">
-                <a href="#" class="botao" style="width: 140px;" onclick="calcular('valor',0)">0</a>
+                <a href="#" class="botao" style="width: 122px;" onclick="calcular('valor',0)">0</a>
                 <a href="#" class="botao" onclick="calcular('acao','.')">.</a>
                 <a href="#" class="botao item-final" onclick="calcular('acao','=')">=</a>
             </div>
         </section>
+        <footer style="text-align: center; margin-top:5px;">
+            <h2 style="color:white; letter-spacing: 8px;">Marcus Vieites</h2>
+        </footer>
+        
     </div>
+    
     <script>
         function calcular(tipo, valor) {
             let valor_campo = [];
             if (tipo === "valor") {
                 document.getElementById("resultado").value += valor;
             }
+            
             if (tipo === "acao") {
                 if (valor === 'c') {
                     document.getElementById("resultado").value = "";
@@ -60,6 +66,11 @@
                 }
 
                 if (valor === '=') {
+                    let verificaIgual = document.getElementById('resultado').value;
+                    if(verificaIgual.length == 0){
+                        document.getElementById('resultado').value = 0;
+                    }
+                   
                     let resultado = eval(document.getElementById("resultado").value);
                     document.getElementById('resultado').value = resultado;
                 }
@@ -67,6 +78,7 @@
             }
         }
     </script>
+    
 </body>
 
 </html>
